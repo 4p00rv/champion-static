@@ -18524,6 +18524,7 @@
 	var ChampionSettings = __webpack_require__(447);
 	var TNCApproval = __webpack_require__(448);
 	var CashierDepositWithdraw = __webpack_require__(449);
+	var ChampionSecurity = __webpack_require__(450);
 
 	var Champion = function () {
 	    'use strict';
@@ -18579,6 +18580,7 @@
 	            metatrader: { module: MetaTrader, is_authenticated: true },
 	            real: { module: ChampionNewReal, is_authenticated: true, only_virtual: true },
 	            settings: { module: ChampionSettings, is_authenticated: true },
+	            security: { module: ChampionSecurity, is_authenticated: true },
 	            virtual: { module: ChampionNewVirtual, not_authenticated: true },
 	            'binary-options': { module: BinaryOptions },
 	            'cashier-password': { module: CashierPassword, is_authenticated: true, only_real: true },
@@ -40312,6 +40314,34 @@
 	}();
 
 	module.exports = CashierDepositWithdraw;
+
+/***/ },
+/* 450 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var Client = __webpack_require__(301);
+
+	var ChampionSettings = function () {
+	    'use strict';
+
+	    var securityContainer = void 0;
+
+	    var load = function load() {
+	        securityContainer = $('.fx-security');
+	        securityContainer.find('#fx-security-content').show();
+	        if (!Client.is_virtual()) {
+	            securityContainer.find('.fx-real').show();
+	        }
+	    };
+
+	    return {
+	        load: load
+	    };
+	}();
+
+	module.exports = ChampionSettings;
 
 /***/ }
 /******/ ]);
