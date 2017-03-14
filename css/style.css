@@ -496,8 +496,11 @@ fieldset {
   max-width: 100%;
   margin-bottom: 20px;
 }
-.form-row select, .form-row input, .form-row textarea {
+.form-row select, .form-row input:not([type='checkbox']), .form-row textarea {
   width: 100%;
+}
+.form-row.checkbox label {
+  display: inline;
 }
 
 .submit-row {
@@ -700,6 +703,14 @@ ol ol ol ol {
 ol ol ol ol li:before {
   content: counter(item1) "." counter(item2) "." counter(item3) "." counter(item4) ".";
   counter-increment: item4;
+}
+
+.text-display {
+  display: block;
+  font-weight: 400;
+  border: 1px solid #F2F2F2;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .fx-advisors {
@@ -1072,7 +1083,6 @@ body .top-nav-menu li a {
 }
 #mt_account_management #accounts_list .acc-box > div {
   height: 100%;
-  border: 1px solid #DEDEDE;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1081,21 +1091,14 @@ body .top-nav-menu li a {
           flex-direction: column;
 }
 #mt_account_management #accounts_list .acc-box > div:hover, #mt_account_management #accounts_list .acc-box > div.active {
-  border-color: #C2C2C2;
-  background: #F2F2F2;
-}
-#mt_account_management #accounts_list .acc-box > div .title {
-  line-height: 40px;
-  text-align: center;
-  background: #004385;
-  color: #fff;
-  margin-bottom: 10px;
+  border-bottom: 2px solid #004385;
 }
 #mt_account_management #accounts_list .acc-box > div .no-account {
   margin-bottom: 20px;
 }
 #mt_account_management #accounts_list .acc-box > div .no-account .info {
   padding: 10px;
+  padding-left: 0;
   font-size: 0.9rem;
   height: 120px;
 }
@@ -1132,11 +1135,9 @@ body .top-nav-menu li a {
 #mt_account_management .fst-container {
   width: 100%;
   padding-right: 10px;
+  margin-top: 50px;
 }
 #mt_account_management .fst-container #fst_action {
-  border: 1px solid #F2F2F2;
-  margin: 0;
-  padding-bottom: 30px;
   position: relative;
 }
 #mt_account_management .fst-container #fst_action legend {
@@ -1148,8 +1149,8 @@ body .top-nav-menu li a {
 #mt_account_management .fst-container #fst_action .close {
   cursor: pointer;
   position: absolute;
-  top: 16px;
-  right: -1px;
+  top: 0;
+  right: 0;
   z-index: 1;
   width: 32px;
   height: 32px;
