@@ -734,6 +734,16 @@ ul.no-padding, ul.no-padding li {
   width: 350px;
 }
 
+.icon-ok {
+  color: #1ec522;
+  font-size: 18px;
+}
+
+.icon-remove {
+  color: #ea202d;
+  font-size: 18px;
+}
+
 .fx-advisors {
   background: url("../images/symbols/advisors.svg");
 }

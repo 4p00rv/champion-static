@@ -18525,6 +18525,7 @@
 	var Home = __webpack_require__(448);
 	var ChampionProfile = __webpack_require__(451);
 	var ChampionSecurity = __webpack_require__(454);
+	var ChampionTradingPlatform = __webpack_require__(455);
 
 	var Champion = function () {
 	    'use strict';
@@ -18590,7 +18591,11 @@
 	            'reset-password': { module: ResetPassword, not_authenticated: true },
 	            'tnc-approval': { module: TNCApproval, is_authenticated: true, only_real: true },
 	            'top-up-virtual': { module: CashierTopUpVirtual, is_authenticated: true, only_virtual: true },
-	            home: { module: Home }
+	            home: { module: Home },
+	            'trading-platform': { module: ChampionTradingPlatform },
+	            'metatrader-5': { module: ChampionTradingPlatform },
+	            'champion-trader': { module: ChampionTradingPlatform }
+
 	        };
 	        if (page in pages_map) {
 	            loadHandler(pages_map[page]);
@@ -46373,6 +46378,35 @@
 	}();
 
 	module.exports = ChampionSettings;
+
+/***/ },
+/* 455 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var Login = __webpack_require__(312);
+
+	var ChampionTradingPlatform = function () {
+	    'use strict';
+
+	    var load = function load() {
+	        $('#login-link').on('click', function () {
+	            Login.redirect_to_login();
+	        });
+	    };
+
+	    var unload = function unload() {
+	        $('#login-link').off('click');
+	    };
+
+	    return {
+	        load: load,
+	        unload: unload
+	    };
+	}();
+
+	module.exports = ChampionTradingPlatform;
 
 /***/ }
 /******/ ]);
