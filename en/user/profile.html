@@ -18,15 +18,16 @@
     <meta name="description" content="ChampionFX Static" />
     <link rel="icon" type="image/png" sizes="16x16" href="/champion-static/images/favicons/CFX_favicon16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/champion-static/images/favicons/CFX_favicon32.png" />
-     <link rel="stylesheet" href="/champion-static/css/flex.min.css?4m4h3bzw" />
-     <link rel="stylesheet" href="/champion-static/css/style.min.css?4m4h3bzw" />
-     <link rel="stylesheet" href="https://style.champion-fx.com/binary.css?4m4h3bzw" />
-      <script src="/champion-static/js/bundle.js?4m4h3bzw" type="text/javascript"></script>
-     <script src="https://style.champion-fx.com/binary.js?4m4h3bzw" type="text/javascript"></script>
+     <link rel="stylesheet" href="/champion-static/css/flex.min.css?w2tm59p0" />
+     <link rel="stylesheet" href="/champion-static/css/style.min.css?w2tm59p0" />
+     <link rel="stylesheet" href="https://style.champion-fx.com/binary.css?w2tm59p0" />
+      <script src="/champion-static/js/bundle.js?w2tm59p0" type="text/javascript"></script>
+     <script src="https://style.champion-fx.com/binary.js?w2tm59p0" type="text/javascript"></script>
      
 </head>
 <body>
-    <div class="topbar primary-color-dark">
+    <div id="msg_notification" class="notice-msg center-text"></div>
+<div class="topbar primary-color-dark">
     <div class="menu-container">
         <div class="row">
             <div class="col-sm-12 topbar-container flex-items-sm-middle">
@@ -65,7 +66,7 @@
         </div>
     </div>
 </div>
-    <div class="dark-blue header">
+    <div id="header" class="dark-blue header">
     <div class="menu-container">
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-6 vertical-center">
@@ -137,12 +138,12 @@
                 <div id="main-signup" class="hidden">
                     <ul class="signup-button">
                         <li class="">
-                            <button class="button-secondary" href="javascript:;">Sign Up</button>
+                            <a class="button-secondary" href="/champion-static/en/home.html#signup"><span>Sign Up</span></a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-7 pull-md-2 hidden-sm-down">
+            <div class="col-md-7 pull-md-2 hidden-sm-down vertical-center">
                 <ul class="top-nav-menu">
                     <li>
                         <a href="/champion-static/en/about-us.html" class="nav-dropdown-toggle">About</a>
@@ -319,8 +320,7 @@
     <p id="error-update-details" class="error-msg"></p>
     <div class="submit-row is-real">
     <p id="msg_form" class="error-msg invisible"></p>
-    <button id="submit" type="submit">Update</button>
-</div>
+    <button id="submit" type="submit">Update</button> </div>
 
     <p class="notice-msg is-real">*To update your personal information, please contact our <a href="/champion-static/en/contact.html">customer support</a> team.</p>
 
@@ -328,14 +328,14 @@
         </div>
 
         <div id="assessment" class="is-real">
-            <div class="">
+            <div class="container fx-section">
     <h2>Financial assessments</h2>
     <div id="msg_success" class="invisible">
         <p>Thank you for completing the Financial Assessment and registering your Financial Account. You can now deposit funds and trade Forex with real money on MT5.</p>
         <div id="msg_authenticate" class="invisible">
             <div><strong>Important</strong></div>
             <p>Please send us the following documents in order to verify your identity and authenticate your account:</p>
-<ul class="bullet">
+<ul class="checked">
     <li>Proof of identity - A scanned copy of your passport, driving license (either provisional or full), or identity card that shows your full name and date of birth.</li>
     <li>Proof of address - A scanned copy of a utility bill or bank statement that's not more than three months old.</li>
 </ul>
@@ -348,7 +348,6 @@
     </div>
 
     <form class="formObject invisible" id="assessment_form" name="assessment_form">
-        <h2 id="heading_risk" class="invisible">Financial Assessment</h2>
         <p class="invisible" id="high_risk_classification">
             Due to recent changes in the regulations, we are required to ask our clients to complete the following Financial Assessment. Please note that you will not be able to continue trading until this is completed.
         </p>
@@ -593,8 +592,7 @@
 
         <div class="submit-row ">
     <p id="msg_form" class="error-msg invisible"></p>
-    <button id="submit" type="submit">Update</button>
-</div>
+    <button id="submit" type="submit">Update</button> </div>
     </form>
 </div>
         </div>
@@ -659,7 +657,7 @@
             </div>
         </div>
     </div>
-    <div id="end_note" class="invisible"></div>
+    <div id="end_note" class="invisible hidden-xs-down"></div>
 </footer>
 </body>
 </html>
