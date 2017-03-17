@@ -18526,7 +18526,6 @@
 	var Home = __webpack_require__(447);
 	var ChampionProfile = __webpack_require__(450);
 	var ChampionSecurity = __webpack_require__(454);
-	var ChampionTradingPlatform = __webpack_require__(455);
 
 	var Champion = function () {
 	    'use strict';
@@ -18595,9 +18594,9 @@
 	            'tnc-approval': { module: TNCApproval, is_authenticated: true, only_real: true },
 	            'top-up-virtual': { module: CashierTopUpVirtual, is_authenticated: true, only_virtual: true },
 	            'types-of-accounts': { module: ClientType },
-	            'trading-platform': { module: ChampionTradingPlatform },
-	            'metatrader-5': { module: ChampionTradingPlatform },
-	            'champion-trader': { module: ChampionTradingPlatform }
+	            'trading-platform': { module: ClientType },
+	            'metatrader-5': { module: ClientType },
+	            'champion-trader': { module: ClientType }
 	        };
 	        if (page in pages_map) {
 	            loadHandler(pages_map[page]);
@@ -20577,6 +20576,7 @@
 
 	__webpack_require__(307);
 	var Client = __webpack_require__(301);
+	var Login = __webpack_require__(312);
 
 	var ClientType = function () {
 	    'use strict';
@@ -20587,11 +20587,20 @@
 	            if (Client.has_real()) {
 	                $('.real-signup').hide();
 	            }
+	        } else {
+	            $('#login-link').find('a').on('click', function () {
+	                Login.redirect_to_login();
+	            });
 	        }
 	    };
 
+	    var unload = function unload() {
+	        $('#login-link').find('a').off('click');
+	    };
+
 	    return {
-	        load: load
+	        load: load,
+	        unload: unload
 	    };
 	}();
 
@@ -46432,35 +46441,6 @@
 	}();
 
 	module.exports = ChampionSettings;
-
-/***/ },
-/* 455 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var Login = __webpack_require__(312);
-
-	var ChampionTradingPlatform = function () {
-	    'use strict';
-
-	    var load = function load() {
-	        $('#login-link').on('click', function () {
-	            Login.redirect_to_login();
-	        });
-	    };
-
-	    var unload = function unload() {
-	        $('#login-link').off('click');
-	    };
-
-	    return {
-	        load: load,
-	        unload: unload
-	    };
-	}();
-
-	module.exports = ChampionTradingPlatform;
 
 /***/ }
 /******/ ]);
